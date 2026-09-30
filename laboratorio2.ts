@@ -6,7 +6,7 @@
 type BonoCallback = (antiguedad: number) => number;
 
 //Estas son las funciones
-//Calcula el pago por horas extra.
+//Calcula el pago por horas extra
  
 function calcularPagoHorasExtra(tarifa: number = 4.00, ...registrosHoras: number[]): number {
     // Si no hay registros de horas extra, devuelve 0
@@ -23,12 +23,12 @@ function calcularPagoHorasExtra(tarifa: number = 4.00, ...registrosHoras: number
 }
 
 
-//Calcula el salario bruto sumando la base y las horas extra.
+//Calcula el salario bruto sumando la base y las horas extra
 function calcularSalarioBruto(salarioBase: number, pagoHorasExtra: number): number {
     return salarioBase + pagoHorasExtra;
 }
 
-//Función que determina el bono según la regla de negocio.
+//Función que determina el bono según la regla de negocio
 
 function determinarBono(antiguedad: number): number {
     if (antiguedad >= 3) {
@@ -53,7 +53,7 @@ function calcularSalarioNeto(salarioBruto: number, bono: number, descuento?: num
     return salarioBruto + bono - descuentoAplicado;
 }
 
-//Función recursiva para acumular el total de la nómina.
+//Función recursiva para acumular el total de la nómina
 function calcularTotalNomina(salariosNetos: number[]): number {
     // Caso base: Si el arreglo está vacío, la suma va a ser 0
     if (salariosNetos.length === 0) {
@@ -99,7 +99,7 @@ const brutoPrueba: number = calcularSalarioBruto(300.00, 0);
 const netoPruebaSinDescuento: number = calcularSalarioNeto(brutoPrueba, 0); 
 console.log(`\n[Prueba extra] Empleado sin descuento -> Salario Neto: $${netoPruebaSinDescuento.toFixed(2)}`);
 
-//Calculo del total
+//Calculo del total recursivo
 const listaSalarios: number[] = [netoAna, netoLuis, netoMarta];
 
 console.log("\n--- TOTAL DE LA NÓMINA ---");
